@@ -1,0 +1,43 @@
+﻿
+@model List<Project2WooxTravel_New.Entities.Reservation>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container">
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Rezervasyonlar</div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table mt-3">
+                            <thead>
+                                <th>İsim-Soyisim</th>
+                                <th>Telefon</th>
+                                <th>Kişi Sayısı</th>
+                                <th>Rezervasyon Tarihi</th>
+                                <th>Açıklama</th>
+                            </thead>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Name</td>
+                                    <td>@item.Phone</td>
+                                    <td>@item.PersonCount</td>
+                                    <td>@item.ReservationDate</td>
+                                    <td>@item.Description</td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
